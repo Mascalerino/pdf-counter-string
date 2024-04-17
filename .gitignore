@@ -1,0 +1,13 @@
+# Directorios de Node
+node_modules/
+
+# Archivos de registro
+npm-debug.log
+yarn-error.log
+
+# Directorio de salida de compilación
+dist/
+
+# Otros archivos y directorios que podrían contener información sensible o no deseada en el repositorio
+.env
+.DS_Store

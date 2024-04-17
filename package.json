@@ -1,0 +1,31 @@
+{
+  "name": "pdf-counter-string",
+  "version": "1.0.0",
+  "description": "App to count words in multiple PDF",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mascalerino/pdf-counter-string.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mascalerino/pdf-counter-string/issues"
+  },
+  "homepage": "https://github.com/Mascalerino/pdf-counter-string#readme",
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@types/pdf-parse": "^1.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "pdf-parse": "^1.1.1"
+  }
+}

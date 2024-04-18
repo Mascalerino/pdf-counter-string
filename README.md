@@ -30,6 +30,8 @@ Para usar esta herramienta, sigue estos pasos:
 
 4. Revisa la consola para ver los resultados de las ocurrencias de cada nombre en los documentos PDF.
 
+5. Las ocurrencias también se guardan en un archivo llamado result.txt
+
 ## Estructura del Proyecto
 
 La estructura de carpetas del proyecto es la siguiente:
@@ -38,6 +40,7 @@ La estructura de carpetas del proyecto es la siguiente:
 - `pdfs/`: Debes colocar aquí los PDFs a analizar.
 - `names.txt`: Aquí debes listar los nombres a buscar en los PDFs.
 - `package.json`: Archivo de configuración de Node.js con las dependencias del proyecto.
+- `result.txt`: Aquí se guardan el número de ocurrencias de cada nombre de names.txt
 
 ## Contribuir
 

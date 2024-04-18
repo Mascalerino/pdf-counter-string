@@ -11,3 +11,4 @@ dist/
 # Otros archivos y directorios que podrían contener información sensible o no deseada en el repositorio
 .env
 .DS_Store
+result.txt

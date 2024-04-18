@@ -1,4 +1,3 @@
-// Importa las librerías necesarias
 import * as fs from "fs";
 import pdf from "pdf-parse";
 import { promisify } from "util";
@@ -6,6 +5,7 @@ import * as path from "path";
 
 const readdir = promisify(fs.readdir);
 const readFile = promisify(fs.readFile);
+const writeFile = promisify(fs.writeFile);
 
 // Función para leer y contar las ocurrencias de los nombres en un archivo PDF
 async function countNamesInPDF(
@@ -43,19 +43,23 @@ async function processPDFsInFolder(folderPath: string, names: string[]) {
   }
 
   console.log("Total occurrences:", totalCounts);
+  return totalCounts;
 }
 
 // Leer los nombres desde un archivo y ejecutar el procesamiento
 async function main() {
-  const namesFilePath = "./names.txt"; // Asegúrate de que el archivo de nombres exista en esta ubicación
+  const namesFilePath = "./names.txt";
   const namesData = await readFile(namesFilePath, { encoding: "utf-8" });
   const names = namesData
     .split("\n")
     .map((line) => line.trim())
     .filter((line) => line.length > 0);
 
-  const folderPath = "./pdfs"; // Asegúrate de que la carpeta de PDFs exista en esta ubicación
-  await processPDFsInFolder(folderPath, names);
+  const folderPath = "./pdfs";
+  const results = await processPDFsInFolder(folderPath, names);
+  const resultsString = JSON.stringify(results, null, 2); // Convierte los resultados a un string formateado en JSON
+  await writeFile("result.txt", resultsString); // Guarda los resultados en un archivo
+  console.log("Results saved to result.txt");
 }
 
 main().catch((err) => console.error(err));
